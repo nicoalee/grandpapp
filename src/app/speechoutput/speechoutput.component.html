@@ -1,0 +1,22 @@
+<ActionBar title="test">
+    <Label text="GrandpApp" class="title"></Label>
+</ActionBar>
+<StackLayout>
+    <ScrollView #scrollView class="scroll-height" orientation="vertical">
+        <StackLayout>
+            <TextView 
+                #textView
+                borderWidth="0"
+                height=auto
+                [fontSize]=fontSize
+                [(ngModel)]="textInput"
+                editable=false>
+            </TextView>
+        </StackLayout>
+    </ScrollView>
+    <GridLayout columns="*, *, *">
+        <Button text="&#xf068;" (tap)="fontSmaller()" class="fas font-button" style="color: red;font-size: 25rem;" row="0" col="0"></Button>
+        <Button text="&#xf130;" row="0" col="1" (tap)="onListen()" [ngStyle]="_micOn$ && {'color': 'red'}" class="fas record-button"></Button>
+        <Button text="&#xf067;" (tap)="fontBigger()" class="fas font-button" style="color: green;font-size: 25rem;" row="0" col="2"></Button>
+    </GridLayout>
+</StackLayout>
